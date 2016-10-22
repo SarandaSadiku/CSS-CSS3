@@ -1,0 +1,161 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: tahoma;
+}
+
+#wrapper{
+	border: 1px solid black;
+	width: 960px;
+	margin:0px auto;
+	background-color: darkblue;
+	padding: 10px;
+	position: relative;
+}
+
+header{
+	padding: 10px 0px 0px 20px; 
+	height: 60px;
+}
+	header #left_header{
+		color: white;
+	}
+		#left_header span{
+			color: blue;
+		}
+
+	#right_header,#left_header {
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	#right_header{
+		margin-left: 66px;
+		position: absolute;
+		margin-top: 10px;
+	}
+
+		#right_header li{
+			display: inline-block;
+			padding-left: 50px;
+				
+			}
+		#right_header a{
+			text-decoration: none;
+			color: white;
+			}
+
+		#right_header span{
+			color: blue;
+			}
+
+#main_content{
+	background-color: #fff;
+	width: 940px;
+	padding: 10px;
+}
+	#top_content img{
+		width: 940px;
+
+	}
+	#services,#projects,#clients{
+		display: inline-block;
+		vertical-align: top;
+		margin-right: 5px;
+	}
+
+
+	.services_projects_clients{
+		width: 299px;
+		background-color: blue;
+		padding: 10px 1px 1px 5px;
+		margin-top: 7px;
+		display: inline-block;
+
+		}
+		.services_projects_clients img{
+			width: 30px;
+			height: 30px;
+			margin-bottom: 3px;
+			}
+		.services_projects_clients img,.services_projects_clients h3{
+			display: inline-block;
+			vertical-align: top;
+			}
+		.services_projects_clients h3{
+			color: white;
+			margin-left: 3px;
+			}
+		.services_projects_clients p{
+			color: white;
+			font-size: 13px;
+			margin-left: 15px;
+			}
+		.more_info{
+			padding: 10px 25px 10px 25px;
+			background:linear-gradient(#5c85d6,#4775d1);
+			border-radius: 5px;
+			color:white;
+			cursor: pointer;
+			border:none;
+			margin: 40px 0px 15px 15px;
+			}
+#left_bottom_content,#middle_bottom_content,#right_bottom_content{
+	display: inline-block;
+	vertical-align: top;
+	width: 300px;
+	}
+	#left_bottom_content h2,#right_bottom_content h2{
+		font-size: 19px;
+		margin: 15px 0px 15px 0px;
+	}
+	#middle_bottom_content {
+		margin-top: 37px;
+	}
+		#middle_bottom_content p{
+			font-size: 12px;
+			margin-top: 18px;
+
+	}
+	#learn_more{
+				margin-top: 30px;
+	}
+		#learn_more a{
+					text-decoration: none;
+					margin-top: 18px;
+				
+	}
+	
+	#right_bottom_content p{
+	 	font-size: 12px;
+
+	 }
+		#testimonial {
+			background-color: #ccccff;
+			padding: 20px 30px 40px 20px;
+			font-style: italic;
+			margin-bottom: 30px;
+			}
+
+#footer{
+	padding: 20px;
+	border-top: 1px solid black;
+	background-color: #ccccff
+
+}
+
+	#footer li{
+		display: inline-block;
+		padding-left: 50px;
+		}
+	#footer a{
+		text-decoration: none;
+		color: white;
+		}
+
+	#footer span{
+		color: blue;
+		}
+	#footer ul{
+		margin-left: 215px;
+		}

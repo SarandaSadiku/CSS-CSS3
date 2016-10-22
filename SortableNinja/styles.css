@@ -1,0 +1,11 @@
+*{
+	margin:0px;
+	padding: 0px;
+}
+#wrapper{
+	margin: 0px auto;
+	background-color: grey;
+}
+#img ul li{
+	list-style-type: none;
+}

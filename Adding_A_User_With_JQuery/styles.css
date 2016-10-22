@@ -1,0 +1,34 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: tahoma;
+}
+
+#container{
+	margin: 0px auto;
+	background-color: #ffffff;
+	padding: 10px;
+	width: 960px;
+}
+
+#header{
+	border: 1px solid black;
+	display: inline-block;
+	padding: 5px;
+}
+#header table th{
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+#add_user{
+	margin-top: 140px;
+}
+
+form input[type="submit"]{
+
+	border: 1px solid white;
+	padding:5px 10px 5px 10px;
+	background-color: grey;
+
+}

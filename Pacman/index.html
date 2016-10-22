@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Pacman</title>
+	<script src= 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+
+	<script>
+		$(document).ready(function(){
+		
+
+			var world = [
+			[0,0,0,0,0,0,0,0,0,0],
+			[0,1,1,1,1,1,1,1,1,0],
+			[0,1,0,0,0,0,1,1,1,0],
+			[0,1,1,1,1,1,1,1,1,0],
+			[0,1,0,0,0,0,1,0,1,0],
+			[0,1,1,1,1,1,1,0,1,0],
+			[0,1,1,0,1,1,9,1,1,0],
+			[0,1,1,0,1,0,1,0,1,0],
+			[0,1,1,1,1,1,1,1,1,0],
+			[0,0,0,0,0,0,0,0,0,0]
+			];
+
+			console.log(world[0][1]);
+
+			function drawMap(){
+				$('#map').html("");
+				for (var row=0; row < world.length; row++){
+					for(var col=0; col<world[row].length; col++){
+		
+						var html_str="";
+						if(world[row][col] === 1){
+							html_str = "<div class='path'></div>";
+						}else if (world[row][col]===0){
+							html_str = "<div class='wall'></div>";
+						}else if (world[row][col]===9){
+							html_str= "<div class='pacman'></div>";
+						}else if (world[row][col]===2){
+							html_str= "<div class='blank'></div>";
+						}
+						
+						$('#map').append(html_str);
+					}
+				}
+
+			}
+			drawMap(); //initial drawing of map
+			
+			var pacman = {
+				row:6,
+				col:6
+			}
+			var calories =0;
+		
+			$('body').keydown(function(event){
+				console.log(event.keyCode);
+				// left arrow
+				if(event.keyCode===37){
+					if(world[pacman.row][pacman.col-1]>=1){
+						if (world[pacman.row][pacman.col-1]===1){
+							calories +=2000;
+						}
+						world[pacman.row][pacman.col-1]=9;
+						world[pacman.row][pacman.col]=2;
+						pacman.col--;
+					}
+				}
+
+				// up arrow
+				else if(event.keyCode===38){
+					console.log(world[pacman.row-1][pacman.col]);
+					if(world[pacman.row-1][pacman.col]>=1){
+						if (world[pacman.row-1][pacman.col]===1){
+							calories +=2000;
+						}
+						world[pacman.row-1][pacman.col]=9;
+						world[pacman.row][pacman.col]=2;
+						pacman.row--;
+					}
+				}
+				// right arrow
+				else if(event.keyCode===39){
+					if(world[pacman.row][pacman.col+1]>=1){
+						if (world[pacman.row][pacman.col+1]===1){
+							calories +=2000;
+						}
+						world[pacman.row][pacman.col+1]=9;
+						world[pacman.row][pacman.col]=2;
+						pacman.col++;
+					}
+				}
+				// down arrow
+				else if(event.keyCode===40){
+					if(world[pacman.row+1][pacman.col]>=1){
+						if (world[pacman.row+1][pacman.col]===1){
+							calories +=2000;
+						}
+						world[pacman.row+1][pacman.col]=9;
+						world[pacman.row][pacman.col]=2;
+						pacman.row++;
+					}
+				}
+				console.log(calories);
+				$('#calories').html("calories:"+calories);
+				drawMap();
+
+					if(calories===98000){
+					setTimeout(function(){alert("YOU WON!"); }, 1000);
+				}
+
+			});
+
+		});
+		
+	</script>
+	<style >
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	.blank{
+		background-color: white;
+	}
+	#map{
+		height: 500px;
+		width: 500px;
+	}
+
+		div{
+			display: inline-block;
+			height: 50px;
+			width: 50px;
+			margin: 0px;
+		}
+		.wall{
+			
+			background-color: darkblue;
+		}
+
+		.path{
+			background-color: white;
+			background-image: url(cherries.gif);
+		}
+		.pacman{
+			background-image: url('pacman.jpg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+
+
+		}
+		
+	</style>
+
+</head>
+<body>
+	<div id="map"></div>
+	<div id="calories">Score: 0</div>
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('form').submit(function(){
+      		$('table').append('<tr><th>'+$('#first_name').val()+'</th><th>'+$('#last_name').val()+'</th><th>'+$('#email_add').val()+'</th><th>'+$('#contact_nr').val()+'</th></tr>');
+      return false;
+    });
+		});
+		
+   
+	</script>
+</head>
+<body>
+	<div id="container">
+		<div id="header">
+			<table>
+				<tr>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email Address</th>
+					<th>Contact#</th>
+				</tr>
+			</table>
+		</div>
+		<h1 id="add_user">Add User</h1>
+			<form id="form1" action="#">
+				First name:<input type="text" id="first_name" name="first_name" placeholder="First Name"><br>
+				Last name:<input type="text" id="last_name" name="last_name" placeholder="Last Name"><br>
+				Email Address:<input type="text" id="email_add" name="email" placeholder="Email Address"><br>
+				Contact No:<input type="text" id="contact_nr" name="phone" placeholder="Phone #"><br>
+				<input  id="button"type="submit"  value="Add User"><br>
+			</form>
+		
+	</div>
+	
+</body>
+</html>
